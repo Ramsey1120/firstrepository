@@ -1,3 +1,3 @@
 # firstrepository
 
-This repository contains my begginer projects for getting into web development.
+This repository contains my beginner projects for getting into web development.
