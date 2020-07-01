@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="my-channels">
+
+    <input type="button" value="add room" class="add-room">
+
+    <h1>my rooms</h1>
+
+    <form action="" class="form">
+        <input type="button" value="cancel" class="cancel-room">
+        <input type="text" id="channel-name" placeholder="insert chatroom name">
+        <input type="submit" value="create room">
+        <div class="err-msg"></div>
+    </form>
+
+</div>
+
+
+<div class="other-channels">
+    <h1>other rooms</h1>
+</div>
+
+<script src="{{ url_for('static', filename='JS/chatrooms.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+
+<script id="room" type="text/x-handlebars-template">
+
+
+    {% raw -%}
+    <a style="display:block" href="channel/{{ id }}" target="_blank">
+        <span class='id'>id: {{ id }}</span>
+        <span class='chat-title'>{{ title }}</span>
+        <span class='admin'>admin: {{ admin }} </span>
+        </a>
+    {%- endraw %}
+    
+</script>
+
+{% endblock %}

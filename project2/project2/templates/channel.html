@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="banner">{{ name }}</div>
+<div class="chats">
+
+</div>
+
+<div class="chat-input">
+
+    <input type="text" placeholder="enter your message..." id="msg-content" data-emojiable=true autofocus>
+    <input type="button" value="send msg" id="send-msg">
+
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+<script type="module" src="{{ url_for('static', filename='JS/send_chat.js') }}"></script>
+<script type="module" src="{{ url_for('static', filename='JS/notification.js') }}"></script>
+
+<script id="chats" type="text/x-handlebars-template">
+
+    {% raw -%}
+
+    <!-- using the 'check_author' function I defined to interact with my template -->
+
+    {{#if ( check_author user) }}
+
+    <div class="other-messages">
+        <div class='sender'> 
+            {{ user }} 
+        </div > 
+       
+        <span class='msg'>{{ message }}<span>
+        <span class='date'>{{ date }}</span>
+    </div>
+
+    {{ else }}
+
+    <div class="my-messages">
+       
+        <span class='msg'>{{ message }}<span>
+        <span class='date'>{{ date }}</span>
+
+    </div>
+
+    {{/if}}
+
+    {%- endraw %}
+
+</script>
+
+
+{% endblock %}

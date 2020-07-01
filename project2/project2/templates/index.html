@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+<div class="slogan">flack
+    <img src="{{ url_for('static', filename='CSS/images/chatbubble.png')}}" class="logo">
+</div>
+
+<div class="username"></div>
+
+<form action="" method="post" novalidate>
+
+    <input type="text" id="username" placeholder="insert your chat name" name="username" autofocus>
+    <input type="submit" value="sign up">
+    <div class="err-msg"></div>
+
+</form>
+
+<a href="{{ url_for('chatrooms') }}" class="join-chat">join chatrooms</a>
+<a href="" class="last-room">continue in the room you left</a>
+
+
+<script src="{{ url_for('static', filename='JS/script.js') }}"></script>
+
+{% endblock %}
