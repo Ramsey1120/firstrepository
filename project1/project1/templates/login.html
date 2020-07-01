@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %} Login {% endblock %}
+
+{% block body %}
+
+<form action="{{ url_for('login')}}" method="POST" class="form" class="form-group">
+
+    {% if message %}
+    <div class="alert alert-danger" role="alert">{{ message }}</div>
+    {% endif %}
+
+    <legend>Log In</legend>
+
+    <input type="text" name="username" class="form-control" placeholder="enter your username" required><br>
+
+    <input type="password" name="password" class="form-control" placeholder="enter your password" required><br>
+
+    <small>
+        Don't have an account?<a href="{{ url_for('signup')}}"> Sign-up here </a><br><br>
+    </small>
+
+    <input type="submit" value="log in" class="btn btn-primary">
+
+</form>
+
+{% endblock %}

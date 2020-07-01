@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block title %}
+{{ isbn }}
+{% endblock %}
+
+
+{% block body %}
+
+<div class="maincontent">
+    {% for info in book %}
+    <div class="bookinfo">
+        The book "<b>{{ info.title }}</b>" written by {{ info.author}} and was first published in
+        {{ info.year}}. For other info regarding the book search ISBN with number <u>{{ info.isbn }}</u>.
+    </div>
+    {% endfor %}
+
+    {% if message1 %}
+
+    <p>{{ message1 }}</p>
+
+    {% else %}
+
+    Reviews<br>
+
+
+    {% for review in reviews %}
+    <div class="reviews">
+        <b>{{ review.reviewtitle }}</b><br>
+        <p><i>{{ review.reviewtext }}</i></p>
+        SCORE: {{ review.stars }}/5
+        {{ review.username }}
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    <div class="goodreads">
+        Number of reviews on Goodreads:<br>
+        {{ no_reviews }}
+    </div>
+
+    <div class="goodreads">
+        Average rating on Goodreads:<br>
+        {{ avg_star }}
+        <div class="star"></div>
+    </div>
+
+    {% if message %}
+
+    <div class="alert alert-danger">{{ message }}</div>
+
+    {% else %}
+
+    <form action="" method="POST" class="form-group">
+
+        <legend>Leave a Review</legend>
+
+        <input type="text" name="reviewTitle" class="form-control" placeholder="Enter a title" required>
+
+        <textarea name="reviewText" class="form-control" placeholder="Write your Review" rows=10 required>
+
+        </textarea>
+
+        <input type="number" name="stars" class="form-control" min=1 max=5 placeholder="(Rating)1-5">
+
+        <input type="submit" value="Submit" class="btn btn-primary">
+
+    </form>
+
+    {% endif %}
+</div>
+{% endblock %}

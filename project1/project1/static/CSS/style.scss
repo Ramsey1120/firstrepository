@@ -1,0 +1,146 @@
+%text {
+    font-family: calibri;
+    font-weight: bold;
+}
+
+body {
+    background-image: url('images/background.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.main{
+    color: white;
+    text-align: center;
+
+    #slogan{
+        font-size: 400%;
+        margin-top: 250px;
+        text-shadow: 4px 4px black;
+
+    }
+    a{ padding: 20px; margin: 50px;
+        font-weight: bold;}
+}
+
+nav {
+    background-color: black;
+    opacity: .95;
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        li {display: inline-block;}
+        a {
+            display: block;
+            padding: 20px 20px 20px 20px;
+            color: whitesmoke;
+            font-weight: bold;
+            text-decoration: none;
+
+            &:hover{
+                background-color: whitesmoke;
+                text-decoration: none;
+            }
+          }
+          
+      }
+  }
+
+.maincontent{
+background-color: whitesmoke;
+border-radius: 15px;
+padding: 20px;
+margin: 100px;
+clear: both;
+text-align:center;
+color: grey;
+font-size: 20pt;
+
+.bookinfo, .reviews {
+    margin: 7.5px;
+    background-color: rgb(197, 239, 255);
+    border-radius: 10px;        
+    border: 1px solid skyblue;
+    font-size: 12.5pt;
+    padding: 7px;
+}   
+.book{
+    background-color: rgb(197, 239, 255);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;        
+    border: 1px solid skyblue;
+    p {
+        color:grey;
+        font-size: 10pt;
+        a{
+            font-size:15pt;
+            text-decoration: none;
+            text-align: center;
+        }
+    }
+}
+
+.goodreads{
+padding: 10px;
+color: black;
+font-size: 17pt;
+}
+
+input[type=text],input[type=number], textarea {   
+font-size: 10pt;
+width: 30%; 
+margin:10px;
+}
+
+}
+
+.findbook{
+text-align: center;
+border-radius: 10px;
+width: 20%;
+padding: 20px;
+background-color: whitesmoke;
+margin: 10px;
+float: right;
+}
+
+.form{
+    text-align: center;
+    padding: 40px;
+    background-color: whitesmoke;
+    margin: auto;
+    margin-top: 75px;
+    border-radius: 15px;
+    width: 30%;
+    text-align: center;
+
+    legend{@extend %text; padding: 10px;}
+
+    input[type=text],input[type=password], input[type=email] 
+    {font-weight: lighter; text-align:center;}
+    
+    input[type=submit] {
+        font-weight: bold;
+        padding: 10px;
+    }
+}
+
+.pagination-page-info {
+    padding: .6em;
+    padding-left: 0;
+    width: 40em;
+    margin: .5em;
+    margin-left: 0;
+    font-size: 12px;
+}
+.pagination-page-info b {
+    color: black;
+    background: #6aa6ed;
+    padding-left: 2px;
+    padding: .1em .25em;
+    font-size: 150%;
+}
